@@ -14,10 +14,25 @@ A powerful, customizable rich text editor extension for Flarum that replaces the
 
 ## 🚀 Installation
 
-### Via Composer (Recommended)
+### Via Composer (After Packagist Publication)
 
 ```bash
 composer require sdacleofe/flarum-rich-text-editor
+```
+
+### Current Installation Method (Before Packagist)
+
+Since the package is not yet published on Packagist, use this method:
+
+```bash
+# Add the repository to your Flarum installation
+composer config repositories.flarum-rich-text-editor vcs https://github.com/sdacleofe/flarum-ext
+
+# Install the extension
+composer require sdacleofe/flarum-rich-text-editor:dev-main
+
+# Enable the extension in Flarum
+php flarum extension:enable sdacleofe-rich-text-editor
 ```
 
 ### Manual Installation
@@ -47,7 +62,10 @@ composer config repositories.flarum-rich-text-editor vcs https://github.com/sdac
 composer require sdacleofe/flarum-rich-text-editor:dev-main
 ```
 
-> **Note**: To publish this extension on Packagist for easier installation, visit [packagist.org](https://packagist.org/packages/submit) and submit the GitHub repository URL: `https://github.com/sdacleofe/flarum-ext`
+> **📦 To Publish on Packagist:**
+> 1. Visit [packagist.org/packages/submit](https://packagist.org/packages/submit)
+> 2. Enter repository URL: `https://github.com/sdacleofe/flarum-ext`
+> 3. After approval, the package will be available via standard `composer require`
 
 ## 🔧 Development Setup
 
