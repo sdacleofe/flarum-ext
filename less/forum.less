@@ -1,0 +1,245 @@
+// Rich Text Editor Styles
+.RichTextEditor {
+  border: 1px solid @control-bg;
+  border-radius: @border-radius;
+  background: @body-bg;
+  
+  .RichTextEditor-toolbar {
+    border-bottom: 1px solid @control-bg;
+    padding: 8px;
+    background: @control-bg;
+    border-radius: @border-radius @border-radius 0 0;
+    
+    .ql-toolbar {
+      border: none !important;
+      padding: 0;
+      
+      .ql-formats {
+        margin-right: 15px;
+        
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      
+      button, select {
+        border: 1px solid transparent;
+        border-radius: 3px;
+        padding: 4px 6px;
+        margin: 0 1px;
+        background: transparent;
+        color: @text-color;
+        cursor: pointer;
+        transition: all 0.2s;
+        
+        &:hover {
+          background: @primary-color;
+          color: @primary-color-contrast;
+        }
+        
+        &.ql-active {
+          background: @primary-color;
+          color: @primary-color-contrast;
+        }
+      }
+      
+      select {
+        min-width: 80px;
+      }
+    }
+  }
+  
+  .RichTextEditor-content {
+    min-height: 150px;
+    padding: 12px;
+    
+    .ql-editor {
+      border: none !important;
+      padding: 0;
+      color: @text-color;
+      font-family: @font-family-base;
+      font-size: @font-size-base;
+      line-height: @line-height-base;
+      
+      &.ql-blank::before {
+        color: @text-muted;
+        font-style: normal;
+      }
+      
+      // Typography styles
+      h1, h2, h3, h4, h5, h6 {
+        color: @heading-color;
+        font-weight: @font-weight-bold;
+        line-height: 1.2;
+        margin: 0.5em 0;
+      }
+      
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.5em; }
+      h3 { font-size: 1.25em; }
+      
+      blockquote {
+        border-left: 4px solid @primary-color;
+        padding-left: 16px;
+        margin: 16px 0;
+        color: @text-muted;
+        font-style: italic;
+      }
+      
+      code {
+        background: @code-bg;
+        color: @code-color;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: @font-family-monospace;
+        font-size: 0.875em;
+      }
+      
+      pre {
+        background: @code-bg;
+        color: @code-color;
+        padding: 12px;
+        border-radius: @border-radius;
+        overflow-x: auto;
+        margin: 16px 0;
+        
+        code {
+          background: none;
+          padding: 0;
+        }
+      }
+      
+      a {
+        color: @primary-color;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: @border-radius;
+        margin: 8px 0;
+      }
+      
+      ul, ol {
+        padding-left: 24px;
+        margin: 12px 0;
+        
+        li {
+          margin: 4px 0;
+        }
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+        
+        th, td {
+          border: 1px solid @control-bg;
+          padding: 8px 12px;
+          text-align: left;
+        }
+        
+        th {
+          background: @control-bg;
+          font-weight: @font-weight-bold;
+        }
+      }
+    }
+  }
+  
+  // Theme variations
+  &.theme-bubble {
+    .RichTextEditor-toolbar {
+      display: none;
+    }
+    
+    .ql-tooltip {
+      background: @tooltip-bg;
+      border: 1px solid @tooltip-border-color;
+      border-radius: @border-radius;
+      color: @tooltip-color;
+      box-shadow: @shadow-lg;
+    }
+  }
+  
+  // Responsive design
+  @media @phone {
+    .RichTextEditor-toolbar {
+      .ql-formats {
+        margin-right: 8px;
+        
+        button, select {
+          padding: 3px 4px;
+          font-size: 0.875em;
+        }
+      }
+    }
+  }
+}
+
+// Focus states
+.RichTextEditor:focus-within {
+  border-color: @primary-color;
+  box-shadow: 0 0 0 2px fade(@primary-color, 20%);
+}
+
+// Loading state
+.RichTextEditor.is-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+// Error state
+.RichTextEditor.has-error {
+  border-color: @error-color;
+}
+
+// Dark mode support
+.App--dark {
+  .RichTextEditor {
+    border-color: @dark-control-bg;
+    background: @dark-body-bg;
+    
+    .RichTextEditor-toolbar {
+      background: @dark-control-bg;
+      border-color: @dark-control-bg;
+      
+      button, select {
+        color: @dark-text-color;
+        
+        &:hover, &.ql-active {
+          background: @dark-primary-color;
+          color: @dark-primary-color-contrast;
+        }
+      }
+    }
+    
+    .ql-editor {
+      color: @dark-text-color;
+      
+      &.ql-blank::before {
+        color: @dark-text-muted;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: @dark-heading-color;
+      }
+      
+      blockquote {
+        color: @dark-text-muted;
+        border-color: @dark-primary-color;
+      }
+      
+      code, pre {
+        background: @dark-code-bg;
+        color: @dark-code-color;
+      }
+    }
+  }
+}

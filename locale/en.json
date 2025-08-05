@@ -1,0 +1,30 @@
+{
+  "rich-text-editor": {
+    "admin": {
+      "enable_label": "Enable Rich Text Editor",
+      "enable_description": "Replace the default text editor with a rich text editor",
+      "toolbar_label": "Toolbar Configuration",
+      "toolbar_description": "Choose which toolbar buttons to display",
+      "toolbar_minimal": "Minimal (Bold, Italic, Link)",
+      "toolbar_basic": "Basic (Bold, Italic, Underline, Link, Lists)",
+      "toolbar_full": "Full (All formatting options)",
+      "theme_label": "Editor Theme",
+      "theme_description": "Choose the visual theme for the editor",
+      "theme_snow": "Snow (Traditional toolbar)",
+      "theme_bubble": "Bubble (Tooltip-style toolbar)",
+      "plugins_label": "Enabled Plugins",
+      "plugins_description": "Select additional features for the editor",
+      "plugin_syntax_highlighting": "Syntax Highlighting",
+      "plugin_image_resize": "Image Resize",
+      "plugin_table": "Table Support",
+      "plugin_video_embed": "Video Embed",
+      "plugin_emoji": "Emoji Support"
+    },
+    "forum": {
+      "editor_placeholder": "Write your message...",
+      "link_prompt": "Enter link URL:",
+      "image_upload_error": "Failed to upload image",
+      "save_shortcut": "Ctrl+Enter to save"
+    }
+  }
+}

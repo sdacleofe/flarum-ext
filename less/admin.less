@@ -1,0 +1,64 @@
+// Admin interface styles for Rich Text Editor settings
+.RichTextEditorSettingsPage {
+  .Form-group {
+    margin-bottom: 20px;
+    
+    label {
+      font-weight: @font-weight-bold;
+      color: @heading-color;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .helpText {
+      font-size: 0.875em;
+      color: @text-muted;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+  }
+  
+  .RichTextEditor-plugins {
+    .Form-group {
+      margin-bottom: 12px;
+      
+      .Switch {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  // Preview area for toolbar configurations
+  .RichTextEditor-preview {
+    border: 1px solid @control-bg;
+    border-radius: @border-radius;
+    background: @body-bg;
+    padding: 16px;
+    margin-top: 12px;
+    
+    .preview-label {
+      font-size: 0.875em;
+      color: @text-muted;
+      margin-bottom: 8px;
+      font-weight: @font-weight-bold;
+    }
+    
+    .toolbar-preview {
+      border: 1px solid @control-bg;
+      border-radius: @border-radius;
+      padding: 8px;
+      background: @control-bg;
+      
+      .preview-button {
+        display: inline-block;
+        padding: 4px 8px;
+        margin: 0 2px;
+        background: @button-bg;
+        border: 1px solid @button-border-color;
+        border-radius: 3px;
+        font-size: 0.75em;
+        color: @text-color;
+      }
+    }
+  }
+}
