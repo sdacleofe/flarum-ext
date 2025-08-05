@@ -9,18 +9,21 @@
     "build:typings": "tsc && api-extractor run --local --verbose",
     "format": "prettier --write src",
     "format:check": "prettier --check src",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf js/dist",
+    "prebuild": "npm run clean",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/sdacleofe/flarum-ext.git"
   },
   "keywords": [
     "flarum",
     "extension",
     "rich-text-editor"
   ],
-  "author": "",
+  "author": "sdacleofe",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.28.0",

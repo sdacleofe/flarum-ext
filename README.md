@@ -17,7 +17,7 @@ A powerful, customizable rich text editor extension for Flarum that replaces the
 ### Via Composer (Recommended)
 
 ```bash
-composer require your-vendor/rich-text-editor
+composer require sdacleofe/flarum-rich-text-editor
 ```
 
 ### Manual Installation
@@ -26,7 +26,7 @@ composer require your-vendor/rich-text-editor
 2. Extract to your Flarum's `extensions` directory
 3. Run composer install in the extension directory:
    ```bash
-   cd extensions/rich-text-editor
+   cd extensions/flarum-rich-text-editor
    composer install --no-dev --optimize-autoloader
    ```
 4. Build the frontend assets:
@@ -34,6 +34,20 @@ composer require your-vendor/rich-text-editor
    npm install
    npm run build
    ```
+
+### Development Installation
+
+For development or if the package isn't on Packagist yet:
+
+```bash
+# Add the repository to your Flarum's composer.json
+composer config repositories.flarum-rich-text-editor vcs https://github.com/sdacleofe/flarum-ext
+
+# Install the extension
+composer require sdacleofe/flarum-rich-text-editor:dev-main
+```
+
+> **Note**: To publish this extension on Packagist for easier installation, visit [packagist.org](https://packagist.org/packages/submit) and submit the GitHub repository URL: `https://github.com/sdacleofe/flarum-ext`
 
 ## 🔧 Development Setup
 

@@ -1,0 +1,54 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+        php-version: [8.0, 8.1, 8.2]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Setup PHP ${{ matrix.php-version }}
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-version }}
+        tools: composer:v2
+        coverage: none
+    
+    - name: Install Node dependencies
+      run: npm ci
+    
+    - name: Install PHP dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+    
+    - name: Build extension
+      run: npm run build
+    
+    - name: Check build artifacts
+      run: |
+        ls -la js/dist/
+        [ -f "js/dist/forum.js" ] && echo "✅ Forum JS built successfully"
+        [ -f "js/dist/admin.js" ] && echo "✅ Admin JS built successfully"
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      if: matrix.node-version == '18.x' && matrix.php-version == '8.1'
+      with:
+        name: build-artifacts
+        path: js/dist/

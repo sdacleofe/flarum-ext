@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\RichTextEditor;
+namespace Sdacleofe\RichTextEditor;
 
 use Flarum\Extend;
 
