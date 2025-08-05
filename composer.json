@@ -1,23 +1,36 @@
 {
-    "name": "your-vendor/rich-text-editor",
-    "description": "Custom Rich Text Editor for Flarum",
+    "name": "sdacleofe/flarum-rich-text-editor",
+    "description": "Custom Rich Text Editor Extension for Flarum",
     "keywords": [
         "flarum",
         "extension",
         "rich-text",
-        "editor"
+        "editor",
+        "wysiwyg",
+        "quill"
     ],
     "type": "flarum-extension",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "sdacleofe",
+            "email": "your-email@example.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/sdacleofe/flarum-ext/issues",
+        "source": "https://github.com/sdacleofe/flarum-ext"
+    },
     "require": {
-        "flarum/core": "^1.8.0"
+        "flarum/core": "^1.8.0",
+        "php": "^8.0"
     },
     "require-dev": {
         "flarum/testing": "^1.0.0"
     },
     "autoload": {
         "psr-4": {
-            "YourVendor\\RichTextEditor\\": "src/"
+            "Sdacleofe\\RichTextEditor\\": "src/"
         }
     },
     "extra": {
@@ -29,9 +42,8 @@
                 "backgroundColor": "#e74c3c",
                 "color": "#fff"
             }
-        },
-        "flagrow": {
-            "discuss": ""
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

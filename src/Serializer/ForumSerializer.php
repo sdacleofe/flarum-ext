@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\RichTextEditor\Serializer;
+namespace Sdacleofe\RichTextEditor\Serializer;
 
 use Flarum\Api\Serializer\AbstractSerializer;
 use Flarum\Settings\SettingsRepositoryInterface;
